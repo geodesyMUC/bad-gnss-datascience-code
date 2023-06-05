@@ -22,7 +22,7 @@ try:
             plt.plot(df_st['timestamp'][i],numSv[i],'r.')
         elif numSv[i] < 20:
             plt.plot(df_st['timestamp'][i],numSv[i],'b.')
-        else:
+        elif numSv[i] > 20:
             plt.plot(df_st['timestamp'][i],numSv[i],'g.')
 except:
     raise Exception('An error occurred while plotting the data.')

@@ -12,18 +12,18 @@ df_st = df[(df['timestamp'] >= st) & (df['timestamp'] <= et)]
 
 df_st['num_satellites'].fillna(0, inplace=True)
 
-nv = df_st['num_satellites']
+numSv = df_st['num_satellites']
 
 # plot data number of satellites
 plt.figure(figsize=(12, 6))
 try:
-    for i in range(len(nv)):
-        if nv[i] < 10:
-            plt.plot(df_st['timestamp'][i],nv[i],'r.')
-        elif nv[i] < 20:
-            plt.plot(df_st['timestamp'][i],nv[i],'b.')
+    for i in range(len(numSv)):
+        if numSv[i] < 10:
+            plt.plot(df_st['timestamp'][i],numSv[i],'r.')
+        elif numSv[i] < 20:
+            plt.plot(df_st['timestamp'][i],numSv[i],'b.')
         else:
-            plt.plot(df_st['timestamp'][i],nv[i],'g.')
+            plt.plot(df_st['timestamp'][i],numSv[i],'g.')
 except:
     raise Exception('An error occurred while plotting the data.')
 
@@ -40,12 +40,12 @@ df_st_pdop = df[(df['timestamp'] >= st_pdop) & (df['timestamp'] <= et_pdop)]
 
 df_st_pdop['pdop'].fillna(0, inplace=True)
 
-pdop_values = df_st_pdop['pdop']
+pdopValues = df_st_pdop['pdop']
 
 # plot data number of satellites
 plt.figure(figsize=(12, 6))
 try:
-    plt.plot(df_st_pdop['timestamp'], pdop_values)
+    plt.plot(df_st_pdop['timestamp'], pdopValues)
 except:
     raise Exception('An error occurred while plotting the data.')
 

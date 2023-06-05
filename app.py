@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('sample_data.csv', delimiter=',', header=0, parse_dates=['timestamp'])
+df = pd.read_csv('sample_data.csv', delimiter=',', header=0, parse_dates=['timestamp'], encoding='utf-8', na_values=['N/A', 'NaN'])
 
 st = '2023-01-01 00:00:00'
 et = '2023-01-01 03:00:00'
@@ -30,8 +30,8 @@ plt.title('Number of Satellites Over Time')
 plt.savefig('satellites_plot.png')
 
 
-st_pdop = '2023-01-01 01:00:00'
-et_pdop = '2023-01-01 04:00:00'
+st_pdop = '2023-01-01 00:00:00'
+et_pdop = '2023-01-01 03:00:00'
 
 df_st_pdop = df[(df['timestamp'] >= st_pdop) & (df['timestamp'] <= et_pdop)]
 

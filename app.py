@@ -1,8 +1,10 @@
 from pandas import *
 import matplotlib.pyplot as plt
 
+# read in the data
 df = read_csv('sample_data.csv', delimiter=',', header=0, parse_dates=['timestamp'], encoding='utf-8', na_values=['N/A', 'NaN'])
 
+# time variables
 st='2023-01-01 00:00:00'
 et='2023-01-01 03:00:00'
 
@@ -12,6 +14,7 @@ df_st['num_satellites'].fillna(0, inplace=True)
 
 nv = df_st['num_satellites']
 
+# plot data number of satellites
 plt.figure(figsize=(12, 6))
 try:
     for i in range(len(nv)):
@@ -39,6 +42,7 @@ df_st_pdop['pdop'].fillna(0, inplace=True)
 
 pdop_values = df_st_pdop['pdop']
 
+# plot data number of satellites
 plt.figure(figsize=(12, 6))
 try:
     plt.plot(df_st_pdop['timestamp'], pdop_values)

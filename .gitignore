@@ -1,0 +1,4 @@
+.vscode
+.env
+*.png
+sample_data.csv

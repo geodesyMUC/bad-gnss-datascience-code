@@ -1,7 +1,7 @@
-import pandas as pd
+from pandas import *
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('sample_data.csv', delimiter=',', header=0, parse_dates=['timestamp'], encoding='utf-8', na_values=['N/A', 'NaN'])
+df = read_csv('sample_data.csv', delimiter=',', header=0, parse_dates=['timestamp'], encoding='utf-8', na_values=['N/A', 'NaN'])
 
 st = '2023-01-01 00:00:00'
 et = '2023-01-01 03:00:00'
@@ -49,4 +49,3 @@ plt.xlabel('Time')
 plt.ylabel('PDOP')
 plt.title('PDOP Over Time')
 plt.savefig('pdop_plot.png')
-

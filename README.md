@@ -18,3 +18,4 @@ The `app.py` is a script that plots data from a file named `sample_data.csv`. It
 - Bad `elif` condition
 - etc.
 
+You can create the sample data for the plotting script by running `create_sample_data.py`.
